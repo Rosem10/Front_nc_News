@@ -1,0 +1,28 @@
+.ArticleCard {
+  background-color: rgb(226, 204, 255);
+
+  height: auto;
+  font-weight: lighter;
+  text-align: center;
+  color: rgb(100, 10, 65);
+  display: block;
+  margin: auto;
+  width: 90%;
+}
+
+#title {
+  font-weight: bold;
+  text-align: left;
+  color: rgb(100, 10, 65);
+  padding: 10px;
+
+}
+
+#body{
+ font-weight: lighter;
+ text-align: left;
+ color: rgb(100, 10, 65);
+ display: block;
+ padding: 10px;
+ width: 90%;
+} 
