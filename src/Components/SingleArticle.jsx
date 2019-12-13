@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../CSS/SingleArticle.css";
+import { Link} from "@reach/router";
+import Comments from "./Comments"
+
 
 class SingleArticle extends Component {
   state = { article: [], isLoading: true };
@@ -20,23 +24,30 @@ class SingleArticle extends Component {
       author,
       body,
       comment_count,
-      created_at
+      created_at,
+      votes,
+      article_id
     } = this.state.article;
 
     return (
-      <div>
+      <div id="SingleArticle">
         <h2 id="articleTitle">{title}</h2>
-        
         <h3 id="head">
-          {author} <br /> {topic}{" "}
+          <Link to={`/articles/author/${author}`}>
+          {author} </Link><br /> {topic}{" "}
         </h3>
         <h4 id="article">{body}</h4>
         <h5 id="footer">
-          {comment_count}
+          <label>Comments: {comment_count}</label>
           <br />
-          {created_at}
+          <label>Votes: {votes}</label>
+          <br />
+          <label>Posted: {created_at}</label>
           <br />
         </h5>
+
+        <Comments article_id = {article_id}/>
+  
       </div>
     );
   }
